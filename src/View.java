@@ -42,4 +42,11 @@ public class View {
         String modelo = sc.next();
         return modelo;
     }
+
+    public static String pedirMatricula(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.println(msg);
+        String matricula = sc.next();
+        return matricula;
+    }
 }

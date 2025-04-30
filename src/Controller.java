@@ -20,8 +20,9 @@ public class Controller {
     }
 
     public static String crearCoche(){
-
-        Model.crearCoche()
+        String modelo = View.pedirModelo("Modelo del coche a crear?");
+        String matricula = View.pedirMatricula("Matricula del coche a crear?");
+        Model.crearCoche(modelo,matricula);
         return "Coche creado";
     }
 }
