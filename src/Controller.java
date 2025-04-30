@@ -2,8 +2,6 @@ import java.lang.module.ModuleDescriptor;
 
 public class Controller {
     public static void main(String[] args) {
-        // Instanciamos la vista y el modelo
-        View miView = new View();
         Model miModel = new Model();
 
         // Crear tres coches
@@ -16,7 +14,7 @@ public class Controller {
         int nuevaVelocidad = miModel.cambiarVelocidad("SBC 1234", 30);
 
         // recoje la velocidad y la muestra (tarea de la View)
-        boolean hecho = miView.muestraVelocidad("SBC 1234", miModel.getVelocidad("SBC 1234"));
+        boolean hecho = View.muestraVelocidad("SBC 1234", miModel.getVelocidad("SBC 1234"));
 
         if (hecho) {
             System.out.println("Correcto");
