@@ -1,7 +1,5 @@
-import java.lang.module.ModuleDescriptor;
-
 public class Controller {
-    public static void main(String[] args) {
+    public static void inicio() {
         // Crear tres coches
         Model.crearCoche("LaFerrari", "SBC 1234");
         Model.crearCoche("Alpine", "HYU 4567");
@@ -19,5 +17,9 @@ public class Controller {
         } else {
             System.out.println("Error");
         } ;
+    }
+
+    public static String crearCoche(){
+        return "Coche creado";
     }
 }
