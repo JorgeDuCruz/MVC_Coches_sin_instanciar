@@ -20,6 +20,8 @@ public class Controller {
     }
 
     public static String crearCoche(){
+
+        Model.crearCoche()
         return "Coche creado";
     }
 }

@@ -16,7 +16,12 @@ public class View {
             System.out.println("3, Mostrar velocidad");
             System.out.println("4, Salir");
             accion=sc.nextInt();
-
+            switch (accion){
+                case 1-> {
+                    System.out.println(Controller.crearCoche());
+                }
+                default -> accion=4;
+            }
         }
     }
 
@@ -29,5 +34,12 @@ public class View {
     public static boolean muestraVelocidad(String matricula, Integer v){
         System.out.println(matricula + ": " + v + "km/hr");
         return true;
+    }
+
+    public static String pedirModelo(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.println(msg);
+        String modelo = sc.next();
+        return modelo;
     }
 }
