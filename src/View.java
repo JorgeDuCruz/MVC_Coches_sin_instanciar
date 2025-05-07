@@ -20,6 +20,9 @@ public class View {
                 case 1-> {
                     System.out.println(Controller.crearCoche());
                 }
+                case 2 ->{
+                    System.out.println(Controller.cambiarVelocidad());
+                }
                 default -> accion=4;
             }
         }
@@ -48,5 +51,12 @@ public class View {
         System.out.println(msg);
         String matricula = sc.next();
         return matricula;
+    }
+
+    public static int pedirVelocidad(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.println(msg);
+        int velocidad = sc.nextInt();
+        return velocidad;
     }
 }

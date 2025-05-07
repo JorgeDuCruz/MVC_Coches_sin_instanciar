@@ -25,4 +25,14 @@ public class Controller {
         Model.crearCoche(modelo,matricula);
         return "Coche creado";
     }
+
+    public static String cambiarVelocidad(){
+        String resultado = "Velocidad cambiada";
+        String matricula = View.pedirMatricula("Matricula del coche que quieres cambiar la velocidad");
+        int velocidad = View.pedirVelocidad("Velocidad actualizada");
+        Model.cambiarVelocidad(matricula,velocidad);
+        if (velocidad==Model.getVelocidad(matricula)) resultado = "Velocidad no cambiada";
+
+        return resultado;
+    }
 }
