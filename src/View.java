@@ -23,6 +23,9 @@ public class View {
                 case 2 ->{
                     System.out.println(Controller.cambiarVelocidad());
                 }
+                case 3 ->{
+                    Controller.mostrarVelocidad();
+                }
                 default -> accion=4;
             }
         }
