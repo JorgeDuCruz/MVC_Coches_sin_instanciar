@@ -28,7 +28,7 @@ public class Controller {
 
     public static String cambiarVelocidad(){
         String resultado = "Velocidad cambiada";
-        String matricula = View.pedirMatricula("Matricula del coche que quieres cambiar la velocidad"); //TODO tratar el caso de matricula inexistente
+        String matricula = View.pedirMatricula("Matricula del coche que quieres cambiar la velocidad"); //TODO mejorar el tratamiento para que no devuelva el mensaje de error y el mensaje de la velocidad
         int velocidad = View.pedirVelocidad("Velocidad actualizada");
         try{
             if (velocidad==Model.getVelocidad(matricula)) resultado = "Velocidad no cambiada";
