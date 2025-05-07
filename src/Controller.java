@@ -36,7 +36,7 @@ public class Controller {
         return resultado;
     }
 
-    public static boolean mostrarVelocdiad(){
+    public static boolean mostrarVelocidad(){
         String matricula = View.pedirMatricula("Matricula del coche que quieres ver velocidad"); //TODO tratar el caso de matricula inexistente
         int velocidad = Model.getVelocidad(matricula);
         View.muestraVelocidad(matricula,velocidad);
