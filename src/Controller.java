@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Controller {
     public static void inicio() {
         // Crear tres coches
@@ -45,5 +47,14 @@ public class Controller {
         int velocidad = Model.getVelocidad(matricula);
         View.muestraVelocidad(matricula,velocidad);
         return true;
+    }
+
+    public static ArrayList<String> mostrarCoches(){
+        ArrayList<Coche> coches = Model.parking;
+        ArrayList<String> datosCoches = new ArrayList<>();
+        for (Coche coche:coches){
+            datosCoches.add("Matricula: "+coche.matricula+". Modelo: "+coche.modelo+". Velocidad: "+coche.velocidad+"km/hr");
+        }
+        return datosCoches;
     }
 }

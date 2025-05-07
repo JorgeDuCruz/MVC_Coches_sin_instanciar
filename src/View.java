@@ -8,13 +8,14 @@ public class View {
      * Menu inicial
      */
     public static void menu(){
-        int accion=0;
+        int accion=-1;
         Scanner sc = new Scanner(System.in);
-        while (accion !=4) {
+        while (accion !=0) {
             System.out.println("1, Crear coche");
             System.out.println("2, Cambiar velocidad");
             System.out.println("3, Mostrar velocidad");
-            System.out.println("4, Salir");
+            System.out.println("4, Mostrar todos los coches");
+            System.out.println("0, Salir");
             accion=sc.nextInt();
             switch (accion){
                 case 1-> {
@@ -26,7 +27,10 @@ public class View {
                 case 3 ->{
                     Controller.mostrarVelocidad();
                 }
-                default -> accion=4;
+                case 4 ->{
+                    System.out.println(Controller.mostrarCoches());
+                }
+                default -> accion=0;
             }
         }
     }
