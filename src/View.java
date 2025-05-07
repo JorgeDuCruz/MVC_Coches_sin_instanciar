@@ -62,4 +62,8 @@ public class View {
         int velocidad = sc.nextInt();
         return velocidad;
     }
+    public static boolean mensajeError(String msg){
+        System.out.println(msg);
+        return true;
+    }
 }

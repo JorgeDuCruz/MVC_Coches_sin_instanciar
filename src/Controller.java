@@ -30,8 +30,13 @@ public class Controller {
         String resultado = "Velocidad cambiada";
         String matricula = View.pedirMatricula("Matricula del coche que quieres cambiar la velocidad"); //TODO tratar el caso de matricula inexistente
         int velocidad = View.pedirVelocidad("Velocidad actualizada");
-        if (velocidad==Model.getVelocidad(matricula)) resultado = "Velocidad no cambiada";
-        else Model.cambiarVelocidad(matricula,velocidad);
+        try{
+            if (velocidad==Model.getVelocidad(matricula)) resultado = "Velocidad no cambiada";
+            else Model.cambiarVelocidad(matricula,velocidad);
+        }catch (NullPointerException e){
+            View.mensajeError("Coche inexistente");
+            resultado = "Velocidad no cambiada";
+        }
         return resultado;
     }
 
