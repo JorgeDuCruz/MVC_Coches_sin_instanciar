@@ -28,18 +28,28 @@ public class Controller {
         return "Coche creado";
     }
 
-    public static String cambiarVelocidad(){
-        String resultado = "Velocidad cambiada";
-        String matricula = View.pedirMatricula("Matricula del coche que quieres cambiar la velocidad"); //TODO mejorar el tratamiento para que no devuelva el mensaje de error y el mensaje de la velocidad
-        int velocidad = View.pedirVelocidad("Velocidad actualizada");
+    private static boolean cambiarVelocidad(String matricula,int velocidad){
+        boolean resultado = true;
+        //TODO mejorar el tratamiento para que no devuelva el mensaje de error y el mensaje de la velocidad
+
         try{
-            if (velocidad==Model.getVelocidad(matricula)) resultado = "Velocidad no cambiada";
+            if (velocidad==Model.getVelocidad(matricula)) resultado = false;
             else Model.cambiarVelocidad(matricula,velocidad);
         }catch (NullPointerException e){
             View.mensajeError("Coche inexistente");
-            resultado = "Velocidad no cambiada";
+            resultado = false;
         }
         return resultado;
+    }
+
+    public static String subirVelocidad(){
+        String matricula = View.pedirMatricula("Matricula del coche que quieres subir la velocidad");
+        int velocidad = View.pedirVelocidad("Cuanta velocidad quieres subirle?");
+        boolean resultado = cambiarVelocidad(matricula,velocidad);
+        if (resultado){
+            return "Velocidad cambiada";
+        }
+        else return "Velocidad no cambiada";
     }
 
     public static boolean mostrarVelocidad(){

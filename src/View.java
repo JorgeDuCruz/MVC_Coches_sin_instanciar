@@ -12,9 +12,10 @@ public class View {
         Scanner sc = new Scanner(System.in);
         while (accion !=0) {
             System.out.println("1, Crear coche");
-            System.out.println("2, Cambiar velocidad");
-            System.out.println("3, Mostrar velocidad");
-            System.out.println("4, Mostrar todos los coches");
+            System.out.println("2, subir velocidad");
+            System.out.println("3, bajar velocidad");
+            System.out.println("4, Mostrar velocidad");
+            System.out.println("5, Mostrar todos los coches");
             System.out.println("0, Salir");
             accion=sc.nextInt();
             switch (accion){
@@ -22,12 +23,15 @@ public class View {
                     System.out.println(Controller.crearCoche());
                 }
                 case 2 ->{
-                    System.out.println(Controller.cambiarVelocidad());
+                    System.out.println(Controller.subirVelocidad());
                 }
-                case 3 ->{
-                    Controller.mostrarVelocidad();
+                case 3->{
+                    System.out.println(Controller.bajarVelocidad());
                 }
                 case 4 ->{
+                    Controller.mostrarVelocidad();
+                }
+                case 5 ->{
                     System.out.println(Controller.mostrarCoches());
                 }
                 default -> accion=0;
