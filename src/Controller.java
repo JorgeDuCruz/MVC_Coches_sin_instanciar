@@ -33,8 +33,8 @@ public class Controller {
         //TODO mejorar el tratamiento para que no devuelva el mensaje de error y el mensaje de la velocidad
 
         try{
-            if (velocidad==Model.getVelocidad(matricula)) resultado = false;
-            else Model.cambiarVelocidad(matricula,velocidad);
+            int nuevaVelocidad = velocidad + Model.getVelocidad(matricula);
+            Model.cambiarVelocidad(matricula,nuevaVelocidad);
         }catch (NullPointerException e){
             View.mensajeError("Coche inexistente");
             resultado = false;
@@ -45,6 +45,16 @@ public class Controller {
     public static String subirVelocidad(){
         String matricula = View.pedirMatricula("Matricula del coche que quieres subir la velocidad");
         int velocidad = View.pedirVelocidad("Cuanta velocidad quieres subirle?");
+        boolean resultado = cambiarVelocidad(matricula,velocidad);
+        if (resultado){
+            return "Velocidad cambiada";
+        }
+        else return "Velocidad no cambiada";
+    }
+
+    public static String bajarVelocidad(){
+        String matricula = View.pedirMatricula("Matricula del coche que quieres bajar la velocidad");
+        int velocidad = View.pedirVelocidad("Cuanta velocidad quieres bajarle?") *(-1);
         boolean resultado = cambiarVelocidad(matricula,velocidad);
         if (resultado){
             return "Velocidad cambiada";
