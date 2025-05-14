@@ -55,4 +55,8 @@ public class Model {
     public static int getVelocidad(String matricula) {
         return getCoche(matricula).velocidad;
     }
+
+    public static ArrayList<Coche> getParking() {
+        return parking;
+    }
 }

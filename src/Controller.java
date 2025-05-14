@@ -70,7 +70,7 @@ public class Controller {
     }
 
     public static ArrayList<String> mostrarCoches(){
-        ArrayList<Coche> coches = Model.parking;
+        ArrayList<Coche> coches = Model.getParking();
         ArrayList<String> datosCoches = new ArrayList<>();
         for (Coche coche:coches){
             datosCoches.add("Matricula: "+coche.matricula+". Modelo: "+coche.modelo+". Velocidad: "+coche.velocidad+"km/hr");
