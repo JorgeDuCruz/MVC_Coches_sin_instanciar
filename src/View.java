@@ -5,36 +5,38 @@ import java.util.Scanner;
  */
 public class View {
     /**
-     * Menu inicial
+     * Menu inicial donde el usuario elegira que hacer dentro de las opciones preestablecidads
      */
     public static void menu(){
-        int accion=-1;
-        Scanner sc = new Scanner(System.in);
+        int accion=-1;//variable para marcar la opcion elegida
+        Scanner sc = new Scanner(System.in);//Scanner para recibir la informacion del usuario
         while (accion !=0) {
+            //Muestra las distintas opciones que hay junto con el numero asociado a cada una
             System.out.println("1, Crear coche");
             System.out.println("2, subir velocidad");
             System.out.println("3, bajar velocidad");
             System.out.println("4, Mostrar velocidad");
             System.out.println("5, Mostrar todos los coches");
             System.out.println("0, Salir");
-            accion=sc.nextInt();
-            switch (accion){
+
+            accion=sc.nextInt();//recibe la opcion elegida
+            switch (accion){//elige la accion a realizar en base a la opcion elegida
                 case 1-> {
-                    System.out.println(Controller.crearCoche());
+                    System.out.println(Controller.crearCoche()); //Le indica al Controller que quieres crear un coche
                 }
                 case 2 ->{
-                    System.out.println(Controller.subirVelocidad());
+                    System.out.println(Controller.subirVelocidad());//Le indica al Controller que quieres subir la velocidad de un coche
                 }
                 case 3->{
-                    System.out.println(Controller.bajarVelocidad());
+                    System.out.println(Controller.bajarVelocidad());//Le indica al Controller que quieres bajar la velocidad de un coche
                 }
                 case 4 ->{
-                    Controller.mostrarVelocidad();
+                    Controller.mostrarVelocidad();//Le indica al Controller que quieres mostrar la velocidad de un coche
                 }
                 case 5 ->{
-                    System.out.println(Controller.mostrarCoches());
+                    System.out.println(Controller.mostrarCoches());//Le indica al Controller que quieres mostrar todos los coches creados
                 }
-                default -> accion=0;
+                default -> accion=0; // si no detecta una opcion valida convierte la opcion a la opcion de salir del programa
             }
         }
     }
@@ -50,6 +52,11 @@ public class View {
         return true;
     }
 
+    /**
+     * Funcion para pedir el modelo de un coche
+     * @param msg mensaje para indicarle al usuario el motivo de pedir un modelo de coche
+     * @return String con el modelo recibido
+     */
     public static String pedirModelo(String msg){
         Scanner sc = new Scanner(System.in);
         System.out.println(msg);
@@ -57,6 +64,11 @@ public class View {
         return modelo;
     }
 
+    /**
+     * Funcion para pedir la matricula de un coche
+     * @param msg mensaje para indicarle al usuario el motivo de pedir una matricula de coche
+     * @return String con la matricula recibida
+     */
     public static String pedirMatricula(String msg){
         Scanner sc = new Scanner(System.in);
         System.out.println(msg);
@@ -64,12 +76,23 @@ public class View {
         return matricula;
     }
 
+    /**
+     * Funcion para pedir la velocidad de un coche
+     * @param msg mensaje para indicarle al usuario el motivo de pedir una velocidad
+     * @return int con la velocidad recibida
+     */
     public static int pedirVelocidad(String msg){
         Scanner sc = new Scanner(System.in);
         System.out.println(msg);
         int velocidad = sc.nextInt();
         return velocidad;
     }
+
+    /**
+     * Funcion para recibir mensajes de error y mostralos por pantalla
+     * @param msg mensaje de error
+     * @return True para tets
+     */
     public static boolean mensajeError(String msg){
         System.out.println(msg);
         return true;
