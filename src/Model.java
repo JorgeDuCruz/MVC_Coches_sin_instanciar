@@ -56,6 +56,10 @@ public class Model {
         return getCoche(matricula).velocidad;
     }
 
+    /**
+     * Funcion para devolver el parking
+     * @return el ArrayList de coches de la propiedad parking
+     */
     public static ArrayList<Coche> getParking() {
         return parking;
     }
