@@ -63,4 +63,31 @@ public class Model {
     public static ArrayList<Coche> getParking() {
         return parking;
     }
+
+    /**
+     * Funcion para repostar un coche
+     * @param gasolina gasolina a repostar
+     * @param matricula matricula del coche que se va a repostar
+     * @return coche repostado
+     */
+    public static Coche repostar(int gasolina,String matricula){
+        Coche aux = getCoche(matricula);
+        int nGasolina = aux.gasolina+gasolina; // calcula la nueva cantidad de gasolina del coche
+        aux.setGasolina(nGasolina);
+        return aux;
+    }
+
+    /**
+     * Funcion para avanzar un coche que lo unico que hace es reducir su gasolina
+     * @param metros cantida que avanza. Se usa para calular la gasolina a restar
+     * @param matricula matricula del coche que va a avanzar
+     * @return coche que ha avanzado
+     */
+    public static Coche avanzar(int metros, String matricula){
+        Coche aux = getCoche(matricula);
+        int gasolinaConsuimda = metros+aux.velocidad;
+        int gasolinaRestante = aux.gasolina - gasolinaConsuimda; // calcula la nueva cantidad de gasolina del coche
+        aux.setGasolina(gasolinaRestante);
+        return aux;
+    }
 }
