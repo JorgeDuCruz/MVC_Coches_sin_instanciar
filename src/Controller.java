@@ -123,7 +123,7 @@ public class Controller {
      */
     public static Coche avanzar(int metros){
         String mat = View.pedirMatricula("Matricula del coche que va a repostar");
-        Coche aux = Model.avanzar(gasolina,mat);
+        Coche aux = Model.avanzar(metros,mat);
         return aux;
     }
 }
