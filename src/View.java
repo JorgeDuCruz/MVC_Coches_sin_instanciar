@@ -17,6 +17,8 @@ public class View {
             System.out.println("3, bajar velocidad");
             System.out.println("4, Mostrar velocidad");
             System.out.println("5, Mostrar todos los coches");
+            System.out.println("6, Avanzar");
+            System.out.println("7, Repostar");
             System.out.println("0, Salir");
 
             accion=sc.nextInt();//recibe la opcion elegida
@@ -35,6 +37,16 @@ public class View {
                 }
                 case 5 ->{
                     System.out.println(Controller.mostrarCoches());//Le indica al Controller que quieres mostrar todos los coches creados
+                }
+                case 6 ->{
+                    int metros= pedirIntGenerico("Cuantos metros deseas avanzar?"); //Pregunta y captura los metros a avanzar
+                    Coche aux  = Controller.avanzar(metros); //indica que avance al controller a si como cuanto debe avanzar y guarda la gasolina restante
+                    mostrarGasolina(aux.gasolina, aux.matricula);//Muestra la gasolina
+                }
+                case 7 ->{
+                    int litros = pedirIntGenerico("Cuantos litros deseas repostar");//Pregunta y captura los litros a repostar
+                    Coche aux = Controller.repostar(litros);//indica que hay que repostar al controller asi como cuanto hay que repostar y guarda la gasolina despues de repostar
+                    mostrarGasolina(aux.gasolina,aux.matricula);//Muestra la gasolina
                 }
                 default -> accion=0; // si no detecta una opcion valida convierte la opcion a la opcion de salir del programa
             }
@@ -96,5 +108,25 @@ public class View {
     public static boolean mensajeError(String msg){
         System.out.println(msg);
         return true;
+    }
+
+    /**
+     * Funcion para pedirle al usuario una variable tipo int
+     * @param msg mensaje para que el usuario sepa que numero tiene que introducir
+     * @return el numero ingresado por el usuario
+     */
+    public static int pedirIntGenerico(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.println(msg);
+        int generico = sc.nextInt();
+        return generico;
+    }
+
+    /**
+     * Funcion para mostrar la gasolina que le queda a un coche
+     * @param gasolina gasolina que le queda a un coche
+     */
+    public static void mostrarGasolina(int gasolina, String matricula){
+        System.out.println("El coche de matricula "+matricula+" ahora tiene "+gasolina+" litros de gasolina");
     }
 }
