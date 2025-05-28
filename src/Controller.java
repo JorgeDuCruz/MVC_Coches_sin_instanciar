@@ -104,4 +104,26 @@ public class Controller {
         }
         return datosCoches;
     }
+
+    /**
+     * Funcion para repostar la gasolina de un coche
+     * @param gasolina gasolina que vas a repostar
+     * @return coche repostado
+     */
+    public static Coche repostar(int gasolina){
+        String mat = View.pedirMatricula("Matricula del coche que avanza?");
+        Coche aux = Model.repostar(gasolina,mat);
+        return aux;
+    }
+
+    /**
+     * Funcion para avanzar un coche
+     * @param metros cantidad que avanza el coche
+     * @return coche avanzado
+     */
+    public static Coche avanzar(int metros){
+        String mat = View.pedirMatricula("Matricula del coche que va a repostar");
+        Coche aux = Model.avanzar(gasolina,mat);
+        return aux;
+    }
 }
