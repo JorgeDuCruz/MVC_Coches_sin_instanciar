@@ -56,7 +56,8 @@ cambien el tipo de dato que retornan.
 Esto ya que al plantearlo en pseudocódigo pense en usar la misma funcion que modifica la gasolina
 para avanzar y para repostar pero como avanzar necesita los datos del coche para calcular la gasolina
 consumida se volvia mucho más intuitivo y facil cambiar la gasolina directamente desde la misma funcion.
-
+* Cambio en el menu de la clase **View** añadiendo una opcion para mostrar la gasolina de un coche
+por separado para facilitar comprobar la gasolina de un coche en cualquier momento 
 
 # Arquitectura MVC
 

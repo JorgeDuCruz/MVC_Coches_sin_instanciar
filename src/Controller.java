@@ -126,4 +126,13 @@ public class Controller {
         Coche aux = Model.avanzar(metros,mat);
         return aux;
     }
+
+    /**
+     * Funcion para mostrar la gasolina de una coche
+     */
+    public static void mostrarGasolina(){
+        String mat = View.pedirMatricula("Matricula del coche al que quiere revisar la gasolina");//Le pide al usuario la matricula del coche que quiere revisar su gasolina
+        Coche aux = Model.getCoche(mat);
+        View.mostrarGasolina(aux.gasolina,aux.matricula);
+    }
 }

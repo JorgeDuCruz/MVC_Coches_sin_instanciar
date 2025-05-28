@@ -19,6 +19,7 @@ public class View {
             System.out.println("5, Mostrar todos los coches");
             System.out.println("6, Avanzar");
             System.out.println("7, Repostar");
+            System.out.println("8, Mostrar gasolina");
             System.out.println("0, Salir");
 
             accion=sc.nextInt();//recibe la opcion elegida
@@ -47,6 +48,9 @@ public class View {
                     int litros = pedirIntGenerico("Cuantos litros deseas repostar");//Pregunta y captura los litros a repostar
                     Coche aux = Controller.repostar(litros);//indica que hay que repostar al controller asi como cuanto hay que repostar y guarda la gasolina despues de repostar
                     mostrarGasolina(aux.gasolina,aux.matricula);//Muestra la gasolina
+                }
+                case 8 ->{
+                    Controller.mostrarGasolina();
                 }
                 default -> accion=0; // si no detecta una opcion valida convierte la opcion a la opcion de salir del programa
             }
