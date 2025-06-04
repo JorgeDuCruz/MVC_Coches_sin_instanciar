@@ -3,6 +3,66 @@
 ```mermaid
 sequenceDiagram
     participant Model
+    participant ObserverGasolina
+    participant Controller
+    participant View
+    
+    activate View
+    View->>Controller:avanzar(int metros)
+    activate Controller
+    Controller->>View:pedirMatricula(String)
+    activate View
+    View-->>Controller:String
+    deactivate View
+    Controller->>Model:avanzar(int metros, String matricula)
+    activate Model
+    Model->>ObserverGasolina:update(Coche)
+    activate ObserverGasolina
+    ObserverGasolina->>View: alarmaGasolina()
+    deactivate ObserverGasolina
+    activate View
+    View->>View:System.out.println
+    deactivate View
+    Model-->>Controller:Coche
+    deactivate Model
+    Controller-->>View:Coche
+    deactivate Controller
+    deactivate View
+```
+
+```mermaid
+sequenceDiagram
+    participant Model
+    participant ObserverGasolina
+    participant Controller
+    participant View
+    
+    activate View
+    View->>Controller:repostar(int metros)
+    activate Controller
+    Controller->>View:pedirMatricula(String)
+    activate View
+    View-->>Controller:String
+    deactivate View
+    Controller->>Model:repostar(int metros, String matricula)
+    activate Model
+    Model->>ObserverGasolina:update(Coche)
+    activate ObserverGasolina
+    ObserverGasolina->>View: alarmaGasolina()
+    deactivate ObserverGasolina
+    activate View
+    View->>View:System.out.println
+    deactivate View
+    Model-->>Controller:Coche
+    deactivate Model
+    Controller-->>View:Coche
+    deactivate Controller
+    deactivate View
+```
+# Examen-Anterior
+```mermaid
+sequenceDiagram
+    participant Model
     participant Controller
     participant View
     activate View
