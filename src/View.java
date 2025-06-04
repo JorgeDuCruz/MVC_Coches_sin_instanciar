@@ -133,4 +133,9 @@ public class View {
     public static void mostrarGasolina(int gasolina, String matricula){
         System.out.println("El coche de matricula "+matricula+" ahora tiene "+gasolina+" litros de gasolina");
     }
+
+
+    public static void alarmaGasolina(){
+        System.out.println("Alerta: Repostar");
+    }
 }

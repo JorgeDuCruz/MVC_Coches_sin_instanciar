@@ -74,6 +74,7 @@ public class Model {
         Coche aux = getCoche(matricula);
         int nGasolina = aux.gasolina+gasolina; // calcula la nueva cantidad de gasolina del coche
         aux.setGasolina(nGasolina);
+        notifyObservers(aux);
         return aux;
     }
 
@@ -88,6 +89,11 @@ public class Model {
         int gasolinaConsuimda = metros+aux.velocidad;
         int gasolinaRestante = aux.gasolina - gasolinaConsuimda; // calcula la nueva cantidad de gasolina del coche
         aux.setGasolina(gasolinaRestante);
+        notifyObservers(aux);
         return aux;
+    }
+
+    private static void notifyObservers(Coche aux){
+        ObserverGasolina.update(aux);
     }
 }
