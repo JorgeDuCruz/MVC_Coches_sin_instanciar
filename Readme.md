@@ -70,6 +70,12 @@ sequenceDiagram
  la clase ObserverGasolina. Si es menor llama a una alarma en la View si no no hace nada
 * Tambien solucione un problema en el controller en el que las funciones avanzar y repostar
 enviaban el mensaje incorrecto al preguntar por la matricula del coche
+
+
+
+### Imagenes del funcionamiento:
+![observerFunciona.png](img/observerFunciona.png)  
+![ObserverFuncionRepostar.png](img/ObserverFuncionRepostar.png)
 # Examen-Anterior
 ```mermaid
 sequenceDiagram
