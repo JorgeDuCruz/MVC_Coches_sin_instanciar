@@ -111,7 +111,7 @@ public class Controller {
      * @return coche repostado
      */
     public static Coche repostar(int gasolina){
-        String mat = View.pedirMatricula("Matricula del coche que avanza?");
+        String mat = View.pedirMatricula("Matricula del coche que va a repostar?");
         Coche aux = Model.repostar(gasolina,mat);
         return aux;
     }
@@ -122,7 +122,7 @@ public class Controller {
      * @return coche avanzado
      */
     public static Coche avanzar(int metros){
-        String mat = View.pedirMatricula("Matricula del coche que va a repostar");
+        String mat = View.pedirMatricula("Matricula del coche que avanza?");
         Coche aux = Model.avanzar(metros,mat);
         return aux;
     }
