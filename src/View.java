@@ -134,7 +134,9 @@ public class View {
         System.out.println("El coche de matricula "+matricula+" ahora tiene "+gasolina+" litros de gasolina");
     }
 
-
+    /**
+     * Funcion para mostrar una alerta cuando sea necesaria
+     */
     public static void alarmaGasolina(){
         System.out.println("Alerta: Repostar");
     }

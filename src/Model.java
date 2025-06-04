@@ -93,6 +93,10 @@ public class Model {
         return aux;
     }
 
+    /**
+     * Funcion para avisar a todos los obaservers de un cambio
+     * @param aux Coche que ha sido modificado
+     */
     private static void notifyObservers(Coche aux){
         ObserverGasolina.update(aux);
     }
