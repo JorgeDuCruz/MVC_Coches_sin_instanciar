@@ -3,8 +3,10 @@
 ```mermaid
 sequenceDiagram
     participant Model
+    box gray Controlador
     participant ObserverGasolina
     participant Controller
+    end
     participant View
     
     activate View
@@ -33,8 +35,10 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
     participant Model
+    box gray Controlador
     participant ObserverGasolina
     participant Controller
+    end
     participant View
     
     activate View
