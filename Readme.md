@@ -63,6 +63,13 @@ sequenceDiagram
     deactivate Controller
     deactivate View
 ```
+
+### Explicaciones:
+* La clase ObserverGasolina es una clase que solo tiene un metodo `update` que recibe un coche
+ y compreuba si ese coche tiene una cantidad de gasolina inferior a 10 que es una constante en 
+ la clase ObserverGasolina. Si es menor llama a una alarma en la View si no no hace nada
+* Tambien solucione un problema en el controller en el que las funciones avanzar y repostar
+enviaban el mensaje incorrecto al preguntar por la matricula del coche
 # Examen-Anterior
 ```mermaid
 sequenceDiagram
